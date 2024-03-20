@@ -55,7 +55,7 @@
     }
   }}
 >
-  <p>{res}</p>
+  <p>{(res !== -1 && res !== undefined) ? res : ''}</p>
 </button>
 
 <div class="fixed-wrap" style={"display: " + (sel ? "flex" : "none") + ";"}>

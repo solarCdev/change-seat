@@ -18,9 +18,7 @@
         {#each result.mono as col, i}
           <div class="row">
             {#each col as row, j}
-              {#if row !== -1}
                 <Student num={0} res={row} i={i} j={j} duo={undefined}/>
-              {/if}
             {/each}
           </div>
         {/each}
@@ -32,9 +30,7 @@
             {#each col as row, j}
               <div class="duo">
                 {#each row as duo, k}
-                  {#if duo !== -1}
                     <Student num={i} res={duo}  i={i} j={j} duo={k}/>
-                  {/if}
                 {/each}
               </div>
             {/each}
@@ -46,9 +42,7 @@
         {#each result.mono as row, i}
           <div class="team">
             {#each row as col, j}
-              {#if col !== -1}
                 <Student num={i} res={col} i={i} j={j} duo={undefined}/>
-              {/if}
             {/each}
           </div>
         {/each}

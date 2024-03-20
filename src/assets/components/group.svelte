@@ -19,14 +19,14 @@
       <label for="">
         모둠 갯수
         <br>
-        <input type="number" id="" bind:value={primary}>
+        <input type="number" id="" bind:value={primary} min="1">
       </label>
     </div>
     <div>
       <label for="">
         모둠 인원
         <br>
-        <input type="number" id="" bind:value={secondary}>
+        <input type="number" id="" bind:value={secondary} min="1">
       </label>
     </div>
   </div>

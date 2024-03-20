@@ -55,8 +55,12 @@
     }
   }}
 >
-  <p>{(res !== -1 && res !== undefined) ? res : ''}</p>
+  <p>{(res !== -1 && res) ? res : ''}</p>
 </button>
+
+<div class="fixed-wrap2" style={"display: " + (sel ? "flex" : "none") + ";"}>
+  <p class="desc">({i}, {j}{duo !== undefined ? (", " + duo) : ""})번째 자리가 선택되었어요. <br> 다른 자리를 클릭하여 두 자리를 서로 바꿀 수 있어요!</p>
+</div>
 
 <div class="fixed-wrap" style={"display: " + (sel ? "flex" : "none") + ";"}>
   <h3>바꾸기</h3>
@@ -182,5 +186,20 @@
     top: 5%;
     left: 5%;
     gap: 4px;
+  }
+
+  .fixed-wrap2 {
+    position: fixed;
+    top: 40px;
+    transform: translateX(-50%);
+    left: 50%;
+    background-color: #BCFFDB;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--stroke);
+  }
+
+  .desc {
+    font-size: 18px;
   }
 </style>

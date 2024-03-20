@@ -19,14 +19,14 @@
       <label for="">
         가로 갯수(짝은 1줄)
         <br>
-        <input type="number" id="" bind:value={primary}>
+        <input type="number" id="" bind:value={primary} min="1">
       </label>
     </div>
     <div>
       <label for="">
         세로 갯수
         <br>
-        <input type="number" id="" bind:value={secondary}>
+        <input type="number" id="" bind:value={secondary} min="1">
       </label>
     </div>
   </div>

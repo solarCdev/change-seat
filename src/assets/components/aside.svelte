@@ -200,8 +200,8 @@
   <div class="wrap">
     <h2>학생</h2>
     <div>
-      <div><label>시작 번호 <input type="number" placeholder="시작 번호" bind:value={studentStartNum}></label></div>
-      <div><label>끝 번호 <input type="number" placeholder="끝 번호" bind:value={studentEndNum}></label></div>
+      <div><label>시작 번호 <input type="number" placeholder="시작 번호" bind:value={studentStartNum} min="1"></label></div>
+      <div><label>끝 번호 <input type="number" placeholder="끝 번호" bind:value={studentEndNum} min="1"></label></div>
       <div>
         <label>
           제외할 번호

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount, type SvelteComponent } from "svelte";
   import { resultArr, selected } from "../stores/stores";
 
   export let num: number;
@@ -7,6 +8,8 @@
   export let i: number;
   export let j: number;
   export let duo: number | undefined;
+
+  let inputRef: HTMLInputElement;
 
   let sel = false;
   let selectedVal: [number, number, number | undefined];
@@ -55,29 +58,27 @@
   <p>{res}</p>
 </button>
 
-{#if sel}
-  <div class="fixed-wrap">
-    <h3>바꾸기</h3>
-    <input type="number" bind:value={toChange}>
-    <button type="button" on:click={() => {selected.set([-1, -1, undefined])}}>취소</button>
-    <button
-      type="button"
-      on:click={() => {
-        resultArr.update((prev) => {
-          let ret = prev;
-          if (duo === undefined) {
-            ret.mono[i][j] = toChange;
-          }
-          else {
-            ret.duo[i][j][duo] = toChange;
-          }
-          return prev;
-        })
-        selected.set([-1, -1, undefined])
-      }}
-    >확인</button>
-  </div>
-{/if}
+<div class="fixed-wrap" style={"display: " + (sel ? "flex" : "none") + ";"}>
+  <h3>바꾸기</h3>
+  <input type="number" bind:value={toChange} bind:this={inputRef}>
+  <button type="button" on:click={() => {selected.set([-1, -1, undefined])}}>취소</button>
+  <button
+    type="button"
+    on:click={() => {
+      resultArr.update((prev) => {
+        let ret = prev;
+        if (duo === undefined) {
+          ret.mono[i][j] = toChange;
+        }
+        else {
+          ret.duo[i][j][duo] = toChange;
+        }
+        return prev;
+      })
+      selected.set([-1, -1, undefined])
+    }}
+  >확인</button>
+</div>
 
 <style>
   .per-seat {

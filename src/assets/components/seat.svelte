@@ -63,7 +63,7 @@
     flex-direction: column;
     width: 100%;
     min-width: 10%;
-    height: 100%;
+    min-height: 100%;
   }
 
   .front {
@@ -93,6 +93,7 @@
     width: 100%;
     padding: 36px;
     display: flex;
+    overflow-x: scroll;
     justify-content: center;
   }
 

@@ -119,10 +119,9 @@
   .duo-col {
     display: flex;
     max-width: 100%;
-    align-items: center;
     flex-direction: row;
     justify-content: left;
-    align-items: center;
+    align-items: top;
     gap: 48px;
   }
 

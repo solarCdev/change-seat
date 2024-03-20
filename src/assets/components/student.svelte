@@ -88,6 +88,10 @@
     color: white;
   }
 
+  .per-seat:hover {
+    filter: brightness(80%);
+  }
+
   .selected {
     background-color: #BCFFDB;
     border: 1px solid var(--main);

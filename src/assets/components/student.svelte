@@ -68,6 +68,9 @@
           if (duo === undefined) {
             ret.mono[i][j] = toChange;
           }
+          else {
+            ret.duo[i][j][duo] = toChange;
+          }
           return prev;
         })
         selected.set([-1, -1, undefined])

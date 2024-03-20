@@ -18,8 +18,8 @@ export type Seat = {
 };
 
 export type Seats = {
-  duo: Seat[][][];
-  mono: Seat[][];
+  duo: number[][][];
+  mono: number[][];
   type: TypeEnum;
 };
 
@@ -38,3 +38,9 @@ export let setting: Writable<Setting> = writable({
   studentExcept: [],
   wait: true,
 });
+
+export let selected: Writable<[number, number, number | undefined]> = writable([
+  -1,
+  -1,
+  undefined,
+]);

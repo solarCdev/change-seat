@@ -38,7 +38,7 @@
       for (let i = 0; i < nowSetting.primaryCnt; i++) {
         v.mono.push([]);
         for (let j = 0; j < nowSetting.secondaryCnt; j++) {
-          v.mono[i].push({type: "personal", num: -1});
+          v.mono[i].push(-1);
         }
       }
       for (let i = 0; i < nowSetting.primaryCnt; i++) {
@@ -46,7 +46,7 @@
         for (let j = 0; j < nowSetting.secondaryCnt; j++) {
           v.duo[i].push([]);
           for (let k = 0; k < 2; k++) {
-            v.duo[i][j].push({type: "duo", num: -1});
+            v.duo[i][j].push(-1);
           }
         }
       }
@@ -79,7 +79,7 @@
             selected = Math.floor(Math.random() * (nowSetting.studentEndNum - nowSetting.studentStartNum + 1) + nowSetting.studentStartNum)
           }
           resultArr.update((v) => {
-            v.mono[i][j] = {type: nowSetting.type, num: selected};
+            v.mono[i][j] = selected;
             return v;
           })
           numbers[selected] = true;
@@ -115,7 +115,7 @@
               selected = Math.floor(Math.random() * (nowSetting.studentEndNum - nowSetting.studentStartNum + 1) + nowSetting.studentStartNum)
             }
             resultArr.update((v) => {
-              v.duo[i][j][k] = {type: nowSetting.type, num: selected};
+              v.duo[i][j][k] = selected;
               return v;
             })
             numbers[selected] = true;

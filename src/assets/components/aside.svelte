@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { resultArr, setting, type Seats, type Setting, type TypeEnum } from "../stores/stores";
+  import { resultArr, setting, type Seats, type Setting, type TypeEnum, selected } from "../stores/stores";
   import Duo from "./duo.svelte";
   import Group from "./group.svelte";
   import Personal from "./personal.svelte";
@@ -128,6 +128,7 @@
     if (nowSetting.wait){
       waitFn();
     }
+    selected.set([-1, -1, undefined])
     window.scrollTo({
       top: 0,
       behavior: "smooth"
